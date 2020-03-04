@@ -20,6 +20,9 @@ const SpaceX = ({ getLaunch, launch, isFetching, error }) => {
      <h1>SpaceX Launch Missions</h1>
 
     <button onClick={getLaunch}>Get new Launch</button>
+
+    <input type="text" placeholder="Filter by Year"></input>
+
     </div>
     )}
 
@@ -31,12 +34,11 @@ const SpaceX = ({ getLaunch, launch, isFetching, error }) => {
         {launch.map(item => (
           
          <SpacexCard 
-        mission_name={item.mission_name}
-        launch_year={item.launch_year}
-        rocket={item.rocket.rocket_name}
-        details={item.details}
-        // video={item.links.video_link.replace("watch?v=", "embed/")}
-
+            mission_name={item.mission_name}
+            launch_year={item.launch_year}
+            rocket={item.rocket.rocket_name}
+            details={item.details}
+            // video={item.links.video_link.replace("watch?v=", "embed/")}
         />
         
         ))}
