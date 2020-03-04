@@ -13,44 +13,42 @@ const SpaceX = ({ getLaunch, launch, isFetching, error }) => {
   if (error) {
     return <h2>{error}</h2>;
   }
-  
+
   if (launch === '') {
     return (
-      <div className="home">
-     <h1>SpaceX Launch Missions</h1>
+      <div className='home'>
+        <h1>SpaceX Launch Missions</h1>
 
-    <button onClick={getLaunch}>Get new Launch</button>
+        <button onClick={getLaunch}>Get new Launch</button>
 
-    <input type="text" placeholder="Filter by Year"></input>
-
-    </div>
-    )}
+        <input type='text' placeholder='Filter by Year'></input>
+      </div>
+    );
+  }
 
   return (
     <div>
-      
-      <div className="cardWrapper">
-    <iframe src={launch[0].links.video_link.replace("watch?v=", "embed/")} /> 
-
-        <h1>SpaceX Launches</h1>
-        {launch.map(item => (
-          
-         <SpacexCard 
+      <div className='cardWrapper'>
+        {/* <h1>SpaceX Launches</h1> */}
+        {launch.map((item, idx) => (
+          <SpacexCard
+            key={idx}
             mission_name={item.mission_name}
             launch_year={item.launch_year}
             rocket={item.rocket.rocket_name}
             details={item.details}
-           src={item.links.video_link.replace("watch?v=", "embed/")}
-
-            // video={item.links.video_link.replace("watch?v=", "embed/")}
-        />
-        
+            src={
+              item.links.video_link === null
+                ? ''
+                : item.links.video_link.replace('watch?v=', 'embed/')
+            }
+          />
         ))}
       </div>
-        {/* <h1>{launch[0].mission_name}</h1> */}
-         {/* <p>{launch[0].launch_year}</p>
+      {/* <h1>{launch[0].mission_name}</h1> */}
+      {/* <p>{launch[0].launch_year}</p>
          <iframe src={launch[0].links.video_link.replace("watch?v=", "embed/")} /> */}
-        <button onClick={getLaunch}>Get new Launch</button>
+      <button onClick={getLaunch}>Get new Launch</button>
     </div>
   );
 };
