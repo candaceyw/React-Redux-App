@@ -30,6 +30,8 @@ const SpaceX = ({ getLaunch, launch, isFetching, error }) => {
     <div>
       
       <div className="cardWrapper">
+    <iframe src={launch[0].links.video_link.replace("watch?v=", "embed/")} /> 
+
         <h1>SpaceX Launches</h1>
         {launch.map(item => (
           
@@ -38,6 +40,8 @@ const SpaceX = ({ getLaunch, launch, isFetching, error }) => {
             launch_year={item.launch_year}
             rocket={item.rocket.rocket_name}
             details={item.details}
+           src={item.links.video_link.replace("watch?v=", "embed/")}
+
             // video={item.links.video_link.replace("watch?v=", "embed/")}
         />
         

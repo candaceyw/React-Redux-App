@@ -8,7 +8,7 @@ const SpacexCard = (props) => {
 
         <div className="card">
              <div className='video'>
-             <iframe src={props.video} /> 
+             <iframe src={props.src} /> 
              </div>
             <h1>{props.mission_name}</h1>
             <p>{props.launch_year}</p>
