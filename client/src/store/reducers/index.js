@@ -1,7 +1,7 @@
-
 import {
   FETCHING_LAUNCH_START,
-  FETCHING_LAUNCH_SUCCESS
+  FETCHING_LAUNCH_SUCCESS,
+  SEARCH_LAUNCH
 } from '../actions/spacexActions';
 
 const initialState = {
@@ -11,7 +11,7 @@ const initialState = {
 };
 
 export const reducer = (state = initialState, action) => {
-  console.log("reducer", action)
+  console.log('reducer', action);
   switch (action.type) {
     case FETCHING_LAUNCH_START:
       return {
@@ -24,6 +24,11 @@ export const reducer = (state = initialState, action) => {
         ...state,
         isFetching: false,
         launch: action.payload
+      };
+    case SEARCH_LAUNCH:
+      return {
+        ...state,
+        logs: action.payload
       };
     default:
       return state;
