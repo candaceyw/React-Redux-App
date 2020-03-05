@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import SpacexCard from './SpacexCard';
+import  Logo from '../assests/spacex-logo.png'
+import 'materialize-css/dist/css/materialize.min.css';
 
 import { getLaunch } from '../store/actions/spacexActions';
 
@@ -17,11 +19,12 @@ const SpaceX = ({ getLaunch, launch, isFetching, error }) => {
   if (launch === '') {
     return (
       <div className='home'>
-        <h1>SpaceX Launch Missions</h1>
+       
+        {/* <h1>SpaceX Launch Missions</h1> */}
+        <div className='logo'><img src={Logo} /></div>
+        <a className='modal-close waves-effect blue waves-light btn-large'  onClick={getLaunch}>Get Launches</a> 
 
-        <button onClick={getLaunch}>Get new Launch</button>
 
-        <input type='text' placeholder='Filter by Year'></input>
       </div>
     );
   }
@@ -29,7 +32,6 @@ const SpaceX = ({ getLaunch, launch, isFetching, error }) => {
   return (
     <div>
       <div className='cardWrapper'>
-        {/* <h1>SpaceX Launches</h1> */}
         {launch.map((item, idx) => (
           <SpacexCard
             key={idx}
@@ -45,10 +47,7 @@ const SpaceX = ({ getLaunch, launch, isFetching, error }) => {
           />
         ))}
       </div>
-      {/* <h1>{launch[0].mission_name}</h1> */}
-      {/* <p>{launch[0].launch_year}</p>
-         <iframe src={launch[0].links.video_link.replace("watch?v=", "embed/")} /> */}
-      <button onClick={getLaunch}>Get new Launch</button>
+    
     </div>
   );
 };

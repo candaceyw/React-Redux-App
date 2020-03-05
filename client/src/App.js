@@ -1,12 +1,14 @@
 import React from 'react';
 import './App.scss';
-// import RonQuotes from './components/RonQuotes';
+import SearchBar from './components/SearchBar'
 import SpaceX from './components/SpaceX';
+import 'materialize-css/dist/css/materialize.min.css';
+
 
 function App() {
   return (
     <div className='App'>
-      {/* <RonQuotes /> */}
+      <SearchBar />
       <SpaceX />
     </div>
   );
