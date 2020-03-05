@@ -1,16 +1,7 @@
-// import { combineReducers } from 'redux';
-// import launchReducer from './launchReducer';
-
-// export default combineReducers({
-//   launch: launchReducer
-
-// });
-
 import {
   FETCHING_LAUNCH_START,
   FETCHING_LAUNCH_SUCCESS,
-  SEARCH_LAUNCH,
-  LAUNCH_DATA
+  SEARCH_LAUNCH
 } from '../actions/spacexActions';
 
 const initialState = {

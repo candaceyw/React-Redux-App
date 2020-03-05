@@ -1,7 +1,7 @@
 import React from 'react';
 
 const UpcomingLaunch = () => {
-  return <div>Launches coming soon</div>;
+  return <h1>Launches coming soon</h1>;
 };
 
 export default UpcomingLaunch;

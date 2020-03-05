@@ -13,8 +13,9 @@ const SpacexCard = props => {
             <span className='card-title'>{props.mission_name}</span>
 
             <p>Year of Launch: {props.launch_year}</p>
-            <p>Rocket Name: {props.rocket}</p>
-            <p>Success/Failure: {props.success}</p>
+            <p>
+              <strong>Rocket Name:</strong> {props.rocket}
+            </p>
             <p>Details of Launch: {props.details}</p>
           </div>
         </div>

@@ -4,7 +4,9 @@ export const FETCHING_LAUNCH_START = 'FETCHING_LAUNCH_START';
 export const FETCHING_LAUNCH_SUCCESS = 'FETCHING_LAUNCH_SUCCESS';
 export const FETCHING_LAUNCH_FAILURE = 'FETCHING_LAUNCH_FAILURE';
 export const SEARCH_LAUNCH = 'SEARCH_LAUNCH';
+export const LAUNCH_DATA = 'LAUNCH_DATA';
 
+// Get All Launches data
 export const getLaunch = () => dispatch => {
   dispatch({ type: FETCHING_LAUNCH_START });
 
@@ -28,12 +30,12 @@ export const getLaunch = () => dispatch => {
     });
 };
 
-// Search logs from server
-export const searchLaunch = text => async dispatch => {
+// Get Next Launch data
+export const nextLaunch = text => async dispatch => {
   // dispatch({ type: FETCHING_LAUNCH_START });
 
   axios
-    .get(`https://api.spacexdata.com/v3/launches?q=${text}`)
+    .get(`https://api.spacexdata.com/v3/launches/next`)
     .then(res => {
       console.log('res', res.data);
 

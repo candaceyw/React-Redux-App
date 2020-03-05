@@ -10,7 +10,6 @@ import { getLaunch } from '../store/actions/spacexActions';
 const SpaceX = ({ launch, isFetching, getLaunch, error }) => {
   useEffect(() => {
     getLaunch();
-    console.log(getLaunch);
     //eslint-disable-next-line
   }, []);
 

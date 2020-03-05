@@ -4,15 +4,15 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import App from './App';
+import rootReducer from './store/reducers';
 
 import { reducer } from './store/reducers';
 
-const store = createStore(reducer, applyMiddleware(thunk));
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 ReactDOM.render(
   <Provider store={store}>
-    {' '}
-    <App />{' '}
+    <App />
   </Provider>,
   document.getElementById('root')
 );
