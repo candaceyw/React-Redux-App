@@ -15,7 +15,7 @@ class Count extends React.Component {
       const then = moment(timeTillDate, timeFormat);
       const now = moment();
       const countdown = moment(then - now);
-      const days = countdown.format('D');
+      const days = countdown.format('DD');
       const hours = countdown.format('HH');
       const minutes = countdown.format('mm');
       const seconds = countdown.format('ss');
@@ -26,7 +26,7 @@ class Count extends React.Component {
 
   componentWillUnmount() {
     if (this.interval) {
-      clearInterval(this.interval);
+      clearInterval(this.interval);  
     }
   }
 
@@ -86,7 +86,7 @@ const SVGCircle = ({ radius }) => (
     <path
       fill='none'
       stroke='#333'
-      stroke-width='4'
+      strokeWidth='4'
       d={describeArc(50, 50, 48, 0, radius)}
     />
   </svg>

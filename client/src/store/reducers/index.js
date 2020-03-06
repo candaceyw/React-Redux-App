@@ -9,12 +9,14 @@
 import {
   FETCHING_LAUNCH_START,
   FETCHING_LAUNCH_SUCCESS,
-  SEARCH_LAUNCH,
-  LAUNCH_DATA
+  NEXT_LAUNCH_START,
+  NEXT_LAUNCH_SUCCESS
+
 } from '../actions/spacexActions';
 
 const initialState = {
   launch: '',
+  date: '',
   isFetching: false,
   error: ''
 };
@@ -34,11 +36,18 @@ export default (state = initialState, action) => {
         isFetching: false,
         launch: action.payload
       };
-    case SEARCH_LAUNCH:
+    case NEXT_LAUNCH_START:
       return {
         ...state,
-        logs: action.payload
+        isFetching: true,
+        error: ''
       };
+      case NEXT_LAUNCH_SUCCESS:
+        return {
+          ...state,
+          isFetching: false,
+          date: action.payload
+        };
     default:
       return state;
   }

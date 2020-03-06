@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import SpacexCard from './SpacexCard';
 import PropTypes from 'prop-types';
-import Logo from '../assests/spacex-logo.png';
 import 'materialize-css/dist/css/materialize.min.css';
 
 import { getLaunch } from '../store/actions/spacexActions';
@@ -38,9 +37,11 @@ const SpaceX = ({ launch, isFetching, getLaunch, error }) => {
                   : item.links.video_link.replace('watch?v=', 'embed/')
               }
             />
+           
           ))
         )}
-      </div>
+       
+       </div>
     </div>
   );
 };
